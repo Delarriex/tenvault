@@ -43,7 +43,7 @@
 <style>
 /* Branding Excellence */
 .uc-logo img, .auth-logo img, .header-logo img {
-    height: 75px !important;
+    height: 160px !important;
     width: auto !important;
     object-fit: contain;
     display: block;
@@ -69,16 +69,16 @@
             data-uc-navbar="mode: click; animation: uc-animation-slide-top-small; duration: 150;">
             <div class="uc-navbar-left">
               <div class="uc-logo text-dark dark:text-white">
-                <a class="panel text-none" href="../index-2.html">
+                <a class="panel text-none" href="../index.html">
                   <img src="../assets/images/logo.png" alt="Tenvault Market Logo">
                 </a>
               </div>
               <ul class="uc-navbar-nav main-nav-list gap-3 xl:gap-4 d-none lg:d-flex fw-medium ltr:xl:ms-4 rtl:me-2 rtl:xl:me-4">
-                <li><a href="../index-2.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="../about-us/index.html">About Us</a></li>
                 <li><a href="../my-account/trading-plans.html">Investment Plans</a></li>
                 <li><a href="../faqs/index.html">FAQs</a></li>
-                <li><a href="../contact-us/index.html">Contact Us</a></li>
+                <li><a href="../contactus/index.html">Contact Us</a></li>
               </ul>
             </div>
             <div class="uc-navbar-right">
@@ -86,7 +86,7 @@
                 <li class="d-inline-block"><a href="../my-account/login/index.html" class="hstack gap-1 text-none fw-medium"><span>Login</span></a></li>
               </ul>
               <a class="btn btn-md btn-primary rounded-default lg:px-3 text-none shadow-xs d-none lg:d-inline-flex text-dark" href="../my-account/register/index.html">Create Account</a>
-              <a class="d-block lg:d-none uc-icon uc-navbar-toggle-icon" href="#" role="button" aria-label="Open menu">
+              <a class="d-block lg:d-none uc-icon uc-navbar-toggle-icon" href="#uc-menu-panel" data-uc-toggle role="button" aria-label="Open menu">
                 <svg width="20" height="20" viewBox="0 0 20 20">
                   <rect class="line-1" y="3" width="20" height="2"></rect>
                   <rect class="line-2" y="9" width="20" height="2"></rect>
@@ -155,7 +155,7 @@
               <div class="panel w-100 sm:w-350px xl:w-450px">
                 <div class="row child-cols g-1">
                   <div class="col-12 sm:col-auto">
-                    <a href="../contact-us/index.html" class="btn btn-md btn-primary rounded-default w-full h-48px text-dark">Get in touch</a>
+                    <a href="../contactus/index.html" class="btn btn-md btn-primary rounded-default w-full h-48px text-dark">Get in touch</a>
                   </div>
                 </div>
               </div>
@@ -170,7 +170,7 @@
                   <div class="col-12 lg:col-5">
                     <div class="panel vstack items-start gap-3 xl:gap-4 ltr:md:pe-8 rtl:md:ps-8">
                       <div>
-                        <a href="../index-2.html"><img src="../assets/images/logo.png" alt="Tenvault Market Logo"></a>
+                        <a href="../index.html"><img src="../assets/images/logo.png" alt="Tenvault Market Logo"></a>
                         <p class="mt-2">Tenvault Markets delivers structured investment strategies, defined timelines, and the discipline required to grow and preserve capital</p>
                         <p class="mt-1">Email: <a href="mailto:support@tenvaultmarkets.com">support@tenvaultmarkets.com</a></p>
                         <p class="mt-1">Address: 350 Fifth Avenue, Suite 4100, New York, NY 10118, New York, NY</p>
@@ -181,7 +181,7 @@
                     <ul class="nav-y gap-2 fw-medium">
                       <li><a class="fs-7 dark:text-gray-300" href="#">Company</a></li>
                       <li><a href="../about-us/index.html">About Us</a></li>
-                      <li><a href="../contact-us/index.html">Contact</a></li>
+                      <li><a href="../contactus/index.html">Contact</a></li>
                       <li><a href="../faqs/index.html">FAQs</a></li>
                     </ul>
                   </div>
@@ -760,21 +760,111 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <script defer src="../vesttemp222/assets/js/jquery.min.js"></script>
   <script defer src="../vesttemp222/assets/js/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.uc-navbar-toggle-icon').forEach(function(toggle) {
-        toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelectorAll('.main-nav-list').forEach(function(nav) {
-            nav.classList.toggle('d-none');
-          });
+  <!-- Mobile Nav Sidebar -->
+  <div id="uc-menu-panel" data-uc-offcanvas="overlay: true; flip: false;">
+      <div class="uc-offcanvas-bar bg-black text-white p-0" style="background: #000; width: 320px;">
+          <button class="uc-offcanvas-close text-white" type="button" data-uc-close style="top: 24px; right: 24px; z-index: 10; font-size: 24px;">×</button>
+          
+          <div class="vstack h-full">
+              <!-- Logo Section -->
+              <div class="px-3 py-4">
+                  <a href="../index.html">
+                      <img src="../assets/images/logo.png" alt="Logo" style="height: 120px; width: auto; object-fit: contain;">
+                  </a>
+              </div>
 
-          const navIsOpen = !document.querySelector('.main-nav-list').classList.contains('d-none');
-          document.body.style.overflow = navIsOpen ? 'hidden' : '';
-        });
-      });
-    });
-  </script>
+              <!-- Navigation items -->
+              <div class="flex-1 px-2 py-2 overflow-y-auto">
+                  <ul class="uc-nav uc-nav-default gap-1">
+                      <li>
+                          <a href="../index.html" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-colors group">
+                              <div class="flex items-center gap-4">
+                                  <span class="text-blue-500 w-6 flex justify-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+                                  </span>
+                                  <span class="fs-5 fw-bold text-white">Home</span>
+                              </div>
+                              <span class="text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                              </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../my-account/login/index.html" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-colors group">
+                              <div class="flex items-center gap-4">
+                                  <span class="text-blue-500 w-6 flex justify-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                  </span>
+                                  <span class="fs-5 fw-bold text-white">Trades</span>
+                              </div>
+                              <span class="text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                              </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../index.html#main_features" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-colors group">
+                              <div class="flex items-center gap-4">
+                                  <span class="text-blue-500 w-6 flex justify-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                  </span>
+                                  <span class="fs-5 fw-bold text-white">Features</span>
+                              </div>
+                              <span class="text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                              </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../faqs/index.html" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-colors group">
+                              <div class="flex items-center gap-4">
+                                  <span class="text-blue-500 w-6 flex justify-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                                  </span>
+                                  <span class="fs-5 fw-bold text-white">Help</span>
+                              </div>
+                              <span class="text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                              </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../privacy-policy/index.html" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-colors group">
+                              <div class="flex items-center gap-4">
+                                  <span class="text-blue-500 w-6 flex justify-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                  </span>
+                                  <span class="fs-5 fw-bold text-white">Privacy Policy</span>
+                              </div>
+                              <span class="text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                              </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../terms-and-conditions/index.html" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-colors group">
+                              <div class="flex items-center gap-4">
+                                  <span class="text-blue-500 w-6 flex justify-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                  </span>
+                                  <span class="fs-5 fw-bold text-white">Terms & Conditions</span>
+                              </div>
+                              <span class="text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                              </span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Bottom Buttons -->
+              <div class="p-4 vstack gap-2 border-t border-white/10">
+                  <a href="../my-account/register/index.html" class="btn btn-primary w-full py-3 fs-5 fw-bold" style="background: #2563eb; border: none; border-radius: 12px;">Register</a>
+                  <a href="../my-account/login/index.html" class="btn btn-primary w-full py-3 fs-5 fw-bold" style="background: #2563eb; border: none; border-radius: 12px;">SignIn</a>
+              </div>
+          </div>
+      </div>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       if (window.AOS) {
@@ -786,5 +876,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Mirrored from tenvaultmarkets.com/terms-and-conditions/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 28 Feb 2026 09:55:51 GMT -->
 </html>
+
 
 
